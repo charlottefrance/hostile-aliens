@@ -1,0 +1,60 @@
+* {
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    padding: 0;
+    max-height: fit-content;
+}
+
+.mother {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mother h1 {
+    color: darkblue;
+    font-size: 60px;
+    text-shadow: 1px 1px;
+}
+
+.mother p {
+    font-size: 15px;
+    color: red;
+    font-weight: 800;
+}
+
+.defense {
+    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+}
+
+.defense h1 {
+    color: darkmagenta;
+    font-size: 40px;
+}
+
+.defense p {
+    font-size: 15px;
+    color: red;
+    font-weight: 800;
+    width: 40px;
+}
+
+.attack {
+    padding-top: 20px;
+    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+}
+
+.attack h1 {
+    color:darkorchid;
+    font-size: 30px;
+}
+
+.attack p {
+    font-size: 15px;
+    color: red;
+    font-weight: 800;
+    width: 40px;
+}

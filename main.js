@@ -48,31 +48,50 @@ attackSixPoints.innerHTML = parseInt(45);
 attackSevenPoints.innerHTML = parseInt(45);
 attackEightPoints.innerHTML = parseInt(45);
 
-function randomItem(shipsArray) {
-    var shipsArray = [
+const randomItem = () => {
+    const shipsArray = [
         motherShip, 
         defenseShipOne, defenseShipTwo, defenseShipThree, defenseShipFour, defenseShipFive,
         attackShipOne, attackShipTwo, attackShipThree, attackShipFour, attackShipFive, attackShipSix, attackShipSeven, attackShipEight
     ]
 
-    shipsArray[Math.floor(Math.random()*shipsArray.length)];
-}
+    const shipAttack = shipsArray[Math.floor(Math.random()*shipsArray.length)];
 
-
-function ifMotherIsHit(motherShip, motherPoints, randomItem) {
-    this.motherShip = motherShip,
-    this.motherPoints = motherPoints,
-    this.randomItem = randomItem;
-
-    if(randomItem() = motherShip) {
-        motherPoints.innerHTML = parseInt()-9;
-    } else {
-        return;
+    if(shipAttack = motherShip) {
+        ifMotherIsHit();
+    } else if(shipAttack = defenseShipOne) {
+        Defense.ifDefenseOneisHit();
+    } else if(shipAttack = defenseShipTwo) {
+        Defense.ifDefenseTwoisHit();
+    } else if(shipAttack = defenseShipThree) {
+        Defense.ifDefenseThreeisHit();
+    } else if(shipAttack = defenseShipFour) {
+        Defense.ifDefenseFourisHit();
+    } else if(shipAttack = defenseShipFive) {
+        Defense.ifDefenseFiveisHit();
     }
-
-    randomItem(shipsArray);
 };
 
-function ifDefenseAreHit(defenseShipOne, defenseShipTwo, defenseShipThree, defenseShipFour, defenseShipFive) {
-    this.d
+function ifMotherIsHit() {};
+
+class Defense {
+    ifDefenseOneisHit() {};
+    ifDefenseTwoisHit() {};
+    ifDefenseThreeisHit() {};
+    ifDefenseFourisHit() {};
+    ifDefenseFiveisHit() {};
 }
+
+class Attack {
+    ifAttackOneisHit() {};
+    ifAttackTwoisHit() {};
+    ifAttackThreeisHit() {};
+    ifAttackFourisHit() {};
+    ifAttackFiveisHit() {};
+    ifAttackSixisHit() {};
+    ifAttackSevenisHit() {};
+    ifAttackEightisHit() {};
+}
+
+
+

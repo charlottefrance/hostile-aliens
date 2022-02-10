@@ -4,6 +4,26 @@
     max-height: fit-content;
 }
 
+.random-select {
+    font-size: 20px;
+}
+
+button {
+    background-color: rgb(212, 186, 226);
+    color: darkblue; 
+    font-weight: 700;
+    height: 40px;
+    width: 180px;
+    border:none;
+    border-radius: 5px;
+    box-shadow: 1px 1px 1px 1px rgb(217, 206, 223);
+}
+
+button:hover {
+    color:rgb(212, 186, 226);
+    background-color: darkorchid;
+    cursor: pointer;
+}
 .mother {
     display: flex;
     justify-content: center;
@@ -12,12 +32,12 @@
 
 .mother h1 {
     color: darkblue;
-    font-size: 60px;
+    font-size: 50px;
     text-shadow: 1px 1px;
 }
 
 .mother p {
-    font-size: 15px;
+    font-size: 20px;
     color: red;
     font-weight: 800;
 }
@@ -30,11 +50,11 @@
 
 .defense h1 {
     color: darkmagenta;
-    font-size: 40px;
+    font-size: 30px;
 }
 
 .defense p {
-    font-size: 15px;
+    font-size: 20px;
     color: red;
     font-weight: 800;
     width: 40px;
@@ -53,7 +73,7 @@
 }
 
 .attack p {
-    font-size: 15px;
+    font-size: 20px;
     color: red;
     font-weight: 800;
     width: 40px;

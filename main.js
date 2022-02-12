@@ -1,29 +1,9 @@
-const motherShip = document.querySelector(".mother-ship");
 let motherPoints = document.querySelector(".mother-points");
-
-
-const defenseShipOne = document.querySelector(".defense-ship0");
-const defenseShipTwo = document.querySelector(".defense-ship1");
-const defenseShipThree = document.querySelector(".defense-ship2");
-const defenseShipFour = document.querySelector(".defense-ship3");
-const defenseShipFive = document.querySelector(".defense-ship4");
-
 let defenseOnePoints = document.querySelector(".defense-points0");
 let defenseTwoPoints = document.querySelector(".defense-points1");
 let defenseThreePoints = document.querySelector(".defense-points2");
 let defenseFourPoints = document.querySelector(".defense-points3");
 let defenseFivePoints = document.querySelector(".defense-points4");
-
-
-const attackShipOne = document.querySelector(".attack-ship0");
-const attackShipTwo = document.querySelector(".attack-ship1");
-const attackShipThree = document.querySelector(".attack-ship2");
-const attackShipFour = document.querySelector(".attack-ship3");
-const attackShipFive = document.querySelector(".attack-ship4");
-const attackShipSix = document.querySelector(".attack-ship5");
-const attackShipSeven = document.querySelector(".attack-ship6");
-const attackShipEight = document.querySelector(".attack-ship7");
-
 let attackOnePoints = document.querySelector(".attack-points0");
 let attackTwoPoints = document.querySelector(".attack-points1");
 let attackThreePoints = document.querySelector(".attack-points2");
@@ -33,65 +13,159 @@ let attackSixPoints = document.querySelector(".attack-points5");
 let attackSevenPoints = document.querySelector(".attack-points6");
 let attackEightPoints = document.querySelector(".attack-points7");
 
-motherPoints.innerHTML = parseInt(100);
-defenseOnePoints.innerHTML = parseInt(80);
-defenseTwoPoints.innerHTML = parseInt(80);
-defenseThreePoints.innerHTML = parseInt(80);
-defenseFourPoints.innerHTML = parseInt(80);
-defenseFivePoints.innerHTML = parseInt(80);
-attackOnePoints.innerHTML = parseInt(45);
-attackTwoPoints.innerHTML = parseInt(45);
-attackThreePoints.innerHTML = parseInt(45);
-attackFourPoints.innerHTML = parseInt(45);
-attackFivePoints.innerHTML = parseInt(45);
-attackSixPoints.innerHTML = parseInt(45);
-attackSevenPoints.innerHTML = parseInt(45);
-attackEightPoints.innerHTML = parseInt(45);
+const startGame = () => {
+    motherPoints.innerHTML = 100;
+    defenseOnePoints.innerHTML = 80;
+    defenseTwoPoints.innerHTML = 80;
+    defenseThreePoints.innerHTML = 80;
+    defenseFourPoints.innerHTML = 80;
+    defenseFivePoints.innerHTML = 80;
+    attackOnePoints.innerHTML = 45;
+    attackTwoPoints.innerHTML = 45;
+    attackThreePoints.innerHTML = 45;
+    attackFourPoints.innerHTML = 45;
+    attackFivePoints.innerHTML = 45;
+    attackSixPoints.innerHTML = 45;
+    attackSevenPoints.innerHTML = 45;
+    attackEightPoints.innerHTML = 45;
+}
 
-const randomItem = () => {
-    const shipsArray = [
-        motherShip, 
-        defenseShipOne, defenseShipTwo, defenseShipThree, defenseShipFour, defenseShipFive,
-        attackShipOne, attackShipTwo, attackShipThree, attackShipFour, attackShipFive, attackShipSix, attackShipSeven, attackShipEight
-    ]
+console.log(startGame()) 
 
-    const shipAttack = shipsArray[Math.floor(Math.random()*shipsArray.length)];
+var restartButton = document.querySelector(".restart");
+restartButton.onclick = startGame;
 
-    if(shipAttack = motherShip) {
-        ifMotherIsHit();
-    } else if(shipAttack = defenseShipOne) {
-        Defense.ifDefenseOneisHit();
-    } else if(shipAttack = defenseShipTwo) {
-        Defense.ifDefenseTwoisHit();
-    } else if(shipAttack = defenseShipThree) {
-        Defense.ifDefenseThreeisHit();
-    } else if(shipAttack = defenseShipFour) {
-        Defense.ifDefenseFourisHit();
-    } else if(shipAttack = defenseShipFive) {
-        Defense.ifDefenseFiveisHit();
+
+class Ship {
+    constructor(shipType, points) {
+        this.shipType = shipType;
+        this.points = points;
     }
-};
 
-function ifMotherIsHit() {};
+    hit(newPoints) {
+        if (this.shipType === "mother-points") {
+            var points = motherPoints.innerHTML;
+            newPoints = parseInt(points) - 9;
+            if (newPoints < 0) newPoints = 0;
+            return motherPoints.innerHTML = newPoints;
+        } else if (this.shipType === "defense-points0") {
+            var points = defenseOnePoints.innerHTML;
+            newPoints = parseInt(points) - 10;
+            if (newPoints < 0) newPoints = 0;
+            return defenseOnePoints.innerHTML = newPoints;
+        } else if (this.shipType === "defense-points1") {
+            var points = defenseTwoPoints.innerHTML;
+            newPoints = parseInt(points) - 10;
+            if (newPoints < 0) newPoints = 0;
+            return defenseTwoPoints.innerHTML = newPoints;
+        } else if (this.shipType === "defense-points2") {
+            var points = defenseThreePoints.innerHTML;
+            newPoints = parseInt(points) - 10;
+            if (newPoints < 0) newPoints = 0;
+            return defenseThreePoints.innerHTML = newPoints;
+        } else if (this.shipType === "defense-points3") {
+            var points = defenseFourPoints.innerHTML;
+            newPoints = parseInt(points) - 10;
+            if (newPoints < 0) newPoints = 0;
+            return defenseFourPoints.innerHTML = newPoints;
+        } else if (this.shipType === "defense-points4") {
+            var points = defenseFivePoints.innerHTML;
+            newPoints = parseInt(points) - 10;
+            if (newPoints < 0) newPoints = 0;
+            return defenseFivePoints.innerHTML = newPoints;
+        } else if (this.shipType === "attack-points0") {
+            var points = attackOnePoints.innerHTML;
+            newPoints = parseInt(points) - 12;
+            if (newPoints < 0) newPoints = 0;
+            return attackOnePoints.innerHTML = newPoints;
+        } else if (this.shipType === "attack-points1") {
+            var points = attackTwoPoints.innerHTML;
+            newPoints = parseInt(points) - 12;
+            if (newPoints < 0) newPoints = 0;
+            return attackTwoPoints.innerHTML = newPoints;
+        } else if (this.shipType === "attack-points2") {
+            var points = attackThreePoints.innerHTML;
+            newPoints = parseInt(points) - 12;
+            if (newPoints < 0) newPoints = 0;
+            return attackThreePoints.innerHTML = newPoints;
+        } else if (this.shipType === "attack-points3") {
+            var points = attackFourPoints.innerHTML;
+            newPoints = parseInt(points) - 12;
+            if (newPoints < 0) newPoints = 0;
+            return attackFourPoints.innerHTML = newPoints;
+        } else if (this.shipType === "attack-points4") {
+            var points = attackFivePoints.innerHTML;
+            newPoints = parseInt(points) - 12;
+            if (newPoints < 0) newPoints = 0;
+            return attackFivePoints.innerHTML = newPoints;
+        } else if (this.shipType === "attack-points5") {
+            var points = attackSixPoints.innerHTML;
+            newPoints = parseInt(points) - 12;
+            if (newPoints < 0) newPoints = 0;
+            return attackSixPoints.innerHTML = newPoints;
+        } else if (this.shipType === "attack-points6") {
+            var points = attackSevenPoints.innerHTML;
+            newPoints = parseInt(points) - 12;
+            if (newPoints < 0) newPoints = 0;
+            return attackSevenPoints.innerHTML = newPoints;
+        } else if (this.shipType === "attack-points7") {
+            var points = attackEightPoints.innerHTML;
+            newPoints = parseInt(points) - 12;
+            if (newPoints < 0) newPoints = 0;
+            return attackEightPoints.innerHTML = newPoints;
+        } else return checkPoints()
+    } 
 
-class Defense {
-    ifDefenseOneisHit() {};
-    ifDefenseTwoisHit() {};
-    ifDefenseThreeisHit() {};
-    ifDefenseFourisHit() {};
-    ifDefenseFiveisHit() {};
+    checkPoints() {
+        if (this.shipType === "mother-points") {
+            if (newPoints = 0) this.shipType.remove()
+        } else if (this.shipType === "defense-points0") {
+            if (newPoints = 0) this.shipType.remove()
+        } else if (this.shipType === "defense-points1") {
+            if (newPoints = 0) this.shipType.remove()
+        } else if (this.shipType === "defense-points2") {
+            if (newPoints = 0) this.shipType.remove()
+        } else if (this.shipType === "defense-points3") {
+            if (newPoints = 0) this.shipType.remove()
+        } else if (this.shipType === "defense-points4") {
+            if (newPoints = 0) this.shipType.remove()
+        } else if (this.shipType === "attack-points0") {
+            if (newPoints = 0) this.shipType.remove()
+        } else if (this.shipType === "attack-points1") {
+            if (newPoints = 0) this.shipType.remove()
+        } else if (this.shipType === "attack-points2") {
+            if (newPoints = 0) this.shipType.remove()
+        } else if (this.shipType === "attack-points3") {
+            if (newPoints = 0) this.shipType.remove()
+        } else if (this.shipType === "attack-points4") {
+            if (newPoints = 0) this.shipType.remove()
+        } else if (this.shipType === "attack-points5") {
+            if (newPoints = 0) this.shipType.remove()
+        } else if (this.shipType === "attack-points6") {
+            if (newPoints = 0) this.shipType.remove()
+        } else if (this.shipType === "attack-points7") {
+            if (newPoints = 0) this.shipType.remove()
+        }
+    }
+}
+// document.querySelector(".random-ship").addEventListener("click", new Ship(shipType, points).hit())
+let hitButtonLog = document.querySelector(".random-select")
+var hitButton = document.querySelector(".random-ship");
+hitButton.onclick = shoot = ()  => {
+    var shipsArray = [
+        motherPoints, 
+        defenseOnePoints, defenseTwoPoints, defenseThreePoints, defenseFourPoints, defenseFivePoints,
+        attackOnePoints, attackTwoPoints, attackThreePoints, attackFourPoints, attackFivePoints, attackSixPoints, attackSevenPoints, attackEightPoints
+    ];
+    
+    hitShip = shipsArray[Math.floor(Math.random()*shipsArray.length)]
+    points = hitShip.innerHTML;
+
+    shipType = hitShip.className;
+
+    return new Ship(shipType, points).hit();
 }
 
-class Attack {
-    ifAttackOneisHit() {};
-    ifAttackTwoisHit() {};
-    ifAttackThreeisHit() {};
-    ifAttackFourisHit() {};
-    ifAttackFiveisHit() {};
-    ifAttackSixisHit() {};
-    ifAttackSevenisHit() {};
-    ifAttackEightisHit() {};
-}
 
-
+hitButtonLog = `${shoot().shipType} was just attacked!`
 

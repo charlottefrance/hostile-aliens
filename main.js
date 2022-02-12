@@ -113,10 +113,41 @@ class Ship {
             newPoints = parseInt(points) - 12;
             if (newPoints < 0) newPoints = 0;
             return attackEightPoints.innerHTML = newPoints;
+        } else return checkPoints()
+    } 
+
+    checkPoints() {
+        if (this.shipType === "mother-points") {
+            if (newPoints = 0) this.shipType.remove()
+        } else if (this.shipType === "defense-points0") {
+            if (newPoints = 0) this.shipType.remove()
+        } else if (this.shipType === "defense-points1") {
+            if (newPoints = 0) this.shipType.remove()
+        } else if (this.shipType === "defense-points2") {
+            if (newPoints = 0) this.shipType.remove()
+        } else if (this.shipType === "defense-points3") {
+            if (newPoints = 0) this.shipType.remove()
+        } else if (this.shipType === "defense-points4") {
+            if (newPoints = 0) this.shipType.remove()
+        } else if (this.shipType === "attack-points0") {
+            if (newPoints = 0) this.shipType.remove()
+        } else if (this.shipType === "attack-points1") {
+            if (newPoints = 0) this.shipType.remove()
+        } else if (this.shipType === "attack-points2") {
+            if (newPoints = 0) this.shipType.remove()
+        } else if (this.shipType === "attack-points3") {
+            if (newPoints = 0) this.shipType.remove()
+        } else if (this.shipType === "attack-points4") {
+            if (newPoints = 0) this.shipType.remove()
+        } else if (this.shipType === "attack-points5") {
+            if (newPoints = 0) this.shipType.remove()
+        } else if (this.shipType === "attack-points6") {
+            if (newPoints = 0) this.shipType.remove()
+        } else if (this.shipType === "attack-points7") {
+            if (newPoints = 0) this.shipType.remove()
         }
     }
 }
-
 // document.querySelector(".random-ship").addEventListener("click", new Ship(shipType, points).hit())
 let hitButtonLog = document.querySelector(".random-select")
 var hitButton = document.querySelector(".random-ship");
@@ -136,5 +167,5 @@ hitButton.onclick = shoot = ()  => {
 }
 
 
-hitButtonLog.innerHTML = `${shoot().shipType} was just attacked!`
+hitButtonLog = `${shoot().shipType} was just attacked!`
 

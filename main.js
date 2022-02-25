@@ -71,11 +71,28 @@ const startGame = () => {
 console.log(startGame()) 
 
 var restartButton = document.querySelector(".restart");
-restartButton.onclick = startGame;
+restartButton.addEventListener("click", () => {
+    shipsArray[0] = 100;
+    shipsArray[1] = 80;
+    shipsArray[2] = 80;
+    shipsArray[3] = 80;
+    shipsArray[4] = 80;
+    shipsArray[5] = 80;
+    shipsArray[6] = 45;
+    shipsArray[7] = 45;
+    shipsArray[8] = 45;
+    shipsArray[9] = 45;
+    shipsArray[10] = 45;
+    shipsArray[11] = 45;
+    shipsArray[12] = 45;
+    shipsArray[13] = 45;
+})
+
+console.log(restartButton)
 
 
 
-console.log(shipsArray)
+// console.log(shipsArray)
 
 hitButton.addEventListener("click", () => {
     let randomNumber = Math.floor(Math.random()*shipsArray.length)

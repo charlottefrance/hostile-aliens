@@ -72,10 +72,18 @@ console.log(startGame())
 
 var restartButton = document.querySelector(".restart");
 
+const resetHTML = () => {
+    document.querySelector("#MotherShip0").innerHTML = 100;
+    document.querySelectorAll(".DShip").forEach(ship => ship.innerHTML = 80)
+    document.querySelectorAll(".AShip").forEach(ship => ship.innerHTML = 45)
+}
+
 restartButtonClick = () => {
     restartButton.addEventListener("click", () => {
         shipsArray.length = 0;
-        return startGame();
+        resetHTML();
+
+        startGame();
     })
 }
 

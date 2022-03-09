@@ -45,7 +45,42 @@ button:hover {
 .defense {
     justify-content: center;
     display: grid;
-    grid-template-columns: repeat(4, auto);
+    grid-template-areas: 
+    "a b c d"
+    "e f g h"
+    "i j k l";
+    align-items: start;
+}
+
+#d1 {
+    grid-area: a;
+}
+#DefenseShip1 {
+    grid-area: b;
+}
+#d2 {
+    grid-area: c;
+}
+#DefenseShip2 {
+    grid-area: d;
+}
+#d3 {
+    grid-area: e;
+}
+#DefenseShip3 {
+    grid-area: f;
+}
+#d4 {
+    grid-area: g;
+}
+#DefenseShip4 {
+    grid-area: h;
+}
+#d5 {
+    grid-area: j;
+}
+#DefenseShip5 {
+    grid-area: k;
 }
 
 .defense h1 {
